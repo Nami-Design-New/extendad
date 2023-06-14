@@ -1,0 +1,85 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title> PDF </title>
+	<style>
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+			outline: none;
+		}
+
+		::-webkit-scrollbar {
+			width: 8px;
+			height: 6px;
+			border-radius: 0px !important;
+		}
+
+		::-webkit-scrollbar-track {
+			border-radius: 0px !important;
+			background: #272727;
+		}
+
+		::-webkit-scrollbar-thumb {
+			background-color: #424242;
+			outline: none;
+			border-radius: 20px !important;
+		}
+
+		.flipBookRead {
+			height: 100vh;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="flipBookRead"></div>
+	<!-- ============================================ JS ============================================ -->
+	<!-- ============================================ JS ============================================ -->
+	<!-- ============================================ JS ============================================ -->
+	<!-- ============================================ JS ============================================ -->
+	<!-- ============================================ JS ============================================ -->
+	<!-- ============================================ JS ============================================ -->
+	<!-- ============================================ JS ============================================ -->
+	<!-- ============================================ JS ============================================ -->
+	<script src="PDF/js/jquery-3.4.1.min.js"></script>
+	<script src="PDF/js/three.min.js"></script>
+	<script src="PDF/js/pdf.min.js"></script>
+	<script src="PDF/js/3dflipbook.min.js"></script>
+	<script type="text/javascript">
+		var template = {
+			html: 'PDF/default-book-view.html',
+			styles: [
+				'PDF/css/short-black-book-view.css'
+			],
+			links: [
+				{
+					rel: 'stylesheet',
+					href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+				}
+			],
+			sounds: {
+				startFlip: 'PDF/sound/start-flip.mp3',
+				endFlip: 'PDF/sound/end-flip.mp3'
+			},
+			script: 'PDF/js/default-book-view.js'
+		};
+		// Book 1 {
+		$('.flipBookRead').FlipBook({
+			pdf: 'PDF/SDG Part 01  72.pdf',
+			template: template,
+			propertiesCallback: function (props) {
+				props.rtl = true;
+				return props;
+			},
+		});
+        // }
+	</script>
+</body>
+
+</html>
